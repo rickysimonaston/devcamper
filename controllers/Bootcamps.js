@@ -4,10 +4,12 @@ const Bootcamp = require('../models/Bootcamp');
 // @access  Public
 exports.getBootcamps = async (req, res, next) => {
     try {
+        const count = await Bootcamp.countDocuments();
         const bootcamps = await Bootcamp.find();
         res.status(200).json({
             success: true,
-            data: bootcamps
+            count: count
+            data: bootcamps,
         })
     } catch (err) {
         res.status(400).json({
