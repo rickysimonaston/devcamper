@@ -168,6 +168,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bluebird@npm:3.5.1":
+  version: 3.5.1
+  resolution: "bluebird@npm:3.5.1"
+  checksum: 2a88420b4b4e6331d925df0007ddbca47ff179ed6304fb108904ec0b92d3469c55394cb61a0841c6296a1c08dd14fb930aecfc6014a766fd566766775c65c6aa
+  languageName: node
+  linkType: hard
+
 "body-parser@npm:1.19.0":
   version: 1.19.0
   resolution: "body-parser@npm:1.19.0"
@@ -217,6 +224,13 @@ __metadata:
   dependencies:
     fill-range: ^7.0.1
   checksum: 54b4fe3c8e9f1a8ebce1754c79bc9fc662fa54bb86696ca35614a958040df2f837134daa6da93961adb207c9533ccddcd5fcd223800fe54c09423f351d361e54
+  languageName: node
+  linkType: hard
+
+"bson@npm:^1.1.1, bson@npm:~1.1.1":
+  version: 1.1.3
+  resolution: "bson@npm:1.1.3"
+  checksum: e5e917a91bca55bade8287f109ba6461acfd71fb6a02b2f755f1abb08667294f00eff162aae93e8b17702cd2a19f14f0e5c0efc475e7fd2cefb4fc8b51443339
   languageName: node
   linkType: hard
 
@@ -319,6 +333,13 @@ __metadata:
   version: 1.1.3
   resolution: "color-name@npm:1.1.3"
   checksum: ad6a0e4beb3232906aeba6213234071ca26f463ac748feb897725cbd0f420a0e71962f9627566afc4716e63455f88a35641342302b8d130402cbbea8f6bf8e1e
+  languageName: node
+  linkType: hard
+
+"colors@npm:^1.4.0":
+  version: 1.4.0
+  resolution: "colors@npm:1.4.0"
+  checksum: c138855287ed57a9daf09802b1749a8ef1eb6c274fa79a85ed80f723a9f1ce842a55b9b4df2165455267168124d1cf3a41e63757c2ecf95fd234c63c2c6af3db
   languageName: node
   linkType: hard
 
@@ -441,6 +462,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"debug@npm:3.1.0":
+  version: 3.1.0
+  resolution: "debug@npm:3.1.0"
+  dependencies:
+    ms: 2.0.0
+  checksum: 31ac62be845b3e2bc49ea566665749e58030123e6d0b2960cb7c730037dc825f46d012e3f63f43fc9d60de3c52edbce705d22cb7e571e2822c81bc5d5ae09da9
+  languageName: node
+  linkType: hard
+
 "debug@npm:^3.2.6":
   version: 3.2.6
   resolution: "debug@npm:3.2.6"
@@ -489,8 +519,10 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "devcamper_api@workspace:."
   dependencies:
+    colors: ^1.4.0
     dotenv: ^8.2.0
     express: ^4.17.1
+    mongoose: ^5.8.11
     morgan: ^1.9.1
     nodemon: ^2.0.2
   languageName: unknown
@@ -1149,6 +1181,13 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"kareem@npm:2.3.1":
+  version: 2.3.1
+  resolution: "kareem@npm:2.3.1"
+  checksum: 66e32ac20384da366dcf02cc420e61f37c7677de47ff80903d3f3bfdb899519a2b55d7f03ca4243316d8750328f4c13b32c69f8b7ad8564b1656b03f936e08fa
+  languageName: node
+  linkType: hard
+
 "latest-version@npm:^3.0.0":
   version: 3.1.0
   resolution: "latest-version@npm:3.1.0"
@@ -1188,6 +1227,13 @@ fsevents@~2.1.2:
   version: 0.3.0
   resolution: "media-typer@npm:0.3.0"
   checksum: a557ca96d89ac7f56891db3abcc235742e03a52ba4d584b5c1c3f55fae01655a8df4aa1f237c8f29450f7b633e3c491563421c32fbd7abc36264f6d910c743b4
+  languageName: node
+  linkType: hard
+
+"memory-pager@npm:^1.0.2":
+  version: 1.5.0
+  resolution: "memory-pager@npm:1.5.0"
+  checksum: 8b63ceeb696770acd84f9b091c784e15fa7fe5d51bc0c59acb4437d91c2be92d260b52be3677eb15faa6d3b7b6af0fb9e2438b5167a7ee987af54d5e98bbb6f3
   languageName: node
   linkType: hard
 
@@ -1283,6 +1329,49 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"mongodb@npm:3.4.1":
+  version: 3.4.1
+  resolution: "mongodb@npm:3.4.1"
+  dependencies:
+    bson: ^1.1.1
+    require_optional: ^1.0.1
+    safe-buffer: ^5.1.2
+    saslprep: ^1.0.0
+  dependenciesMeta:
+    saslprep:
+      optional: true
+  checksum: 9b94abcde57d4f4101274f8b11984b03e64ddbe90edeea5590c377250289a005d7e2aeaafc2bcdc010c3d17023ec2bceb3ef2484c39e1f19f49bf8cf08354c83
+  languageName: node
+  linkType: hard
+
+"mongoose-legacy-pluralize@npm:1.0.2":
+  version: 1.0.2
+  resolution: "mongoose-legacy-pluralize@npm:1.0.2"
+  peerDependencies:
+    mongoose: "*"
+  checksum: f7b523849f44b8d55187612eda13927fa3a75cb44fc6ad94729eca71939f09a3c92630a2bb43600e35529ea97424a39b0465138d5edda6033ecd49eacd5b5a8b
+  languageName: node
+  linkType: hard
+
+"mongoose@npm:5.8.11, mongoose@npm:^5.8.11":
+  version: 5.8.11
+  resolution: "mongoose@npm:5.8.11"
+  dependencies:
+    bson: ~1.1.1
+    kareem: 2.3.1
+    mongodb: 3.4.1
+    mongoose-legacy-pluralize: 1.0.2
+    mpath: 0.6.0
+    mquery: 3.2.2
+    ms: 2.1.2
+    regexp-clone: 1.0.0
+    safe-buffer: 5.1.2
+    sift: 7.0.1
+    sliced: 1.0.1
+  checksum: 0e08a352d815bbf757597567f4a68f3ea886a1881213309adc8e29a2b1f932ea57238f6d97a34119c85bcf247b56caeb31786ec0be5c7d716cd3f8c83baa449b
+  languageName: node
+  linkType: hard
+
 "morgan@npm:^1.9.1":
   version: 1.9.1
   resolution: "morgan@npm:1.9.1"
@@ -1293,6 +1382,26 @@ fsevents@~2.1.2:
     on-finished: ~2.3.0
     on-headers: ~1.0.1
   checksum: c22c599217a3370b711e072f928454371780fa8dbe0ca1911c7b19083607245e6b8a8a86a95425a75941f4a1908a34d5c0eb166bbdac63445c4ee654adbd98e1
+  languageName: node
+  linkType: hard
+
+"mpath@npm:0.6.0":
+  version: 0.6.0
+  resolution: "mpath@npm:0.6.0"
+  checksum: e7caa45500a133657a2b052f1e7b22f7e28e8545a09a4da2ec77a24db3ee818d7e55276562ee41eeba02947b0c67625da714e7b95e81398a7ff3c036866ca6b2
+  languageName: node
+  linkType: hard
+
+"mquery@npm:3.2.2":
+  version: 3.2.2
+  resolution: "mquery@npm:3.2.2"
+  dependencies:
+    bluebird: 3.5.1
+    debug: 3.1.0
+    regexp-clone: ^1.0.0
+    safe-buffer: 5.1.2
+    sliced: 1.0.1
+  checksum: ca1c470808d5ace9bb1d20570d9c58b0ec31f51dfb75f8f4a5f1cf5063f4338d6118ace13ce2795e8633dac2743950916768aad1670025f9e1ff2114eecabcf9
   languageName: node
   linkType: hard
 
@@ -1310,7 +1419,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"ms@npm:^2.1.1":
+"ms@npm:2.1.2, ms@npm:^2.1.1":
   version: 2.1.2
   resolution: "ms@npm:2.1.2"
   checksum: 2a3d955e5199024d4b18630ff47c21b52703a5e892615ae233486b8108f26b5493736009754263eebae765ab79d6e20327dad6e52d7843b689d404245e286549
@@ -1691,6 +1800,13 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"regexp-clone@npm:1.0.0, regexp-clone@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "regexp-clone@npm:1.0.0"
+  checksum: 96fa6d470dd0e0bc066ec0e49b435e77a376bb91b141777c1cbad097df60dd46ddd48cbccc49b4b50eba91af2ae56af24052a917aec605e016d98ac22f9642ae
+  languageName: node
+  linkType: hard
+
 "registry-auth-token@npm:^3.0.1":
   version: 3.4.0
   resolution: "registry-auth-token@npm:3.4.0"
@@ -1738,6 +1854,23 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"require_optional@npm:^1.0.1":
+  version: 1.0.1
+  resolution: "require_optional@npm:1.0.1"
+  dependencies:
+    resolve-from: ^2.0.0
+    semver: ^5.1.0
+  checksum: a0daa6cc30ecebd548455d592305309909e9ed28ee3e66268d5348af4a3382a6ece44ddf2b6afa56918ed93665928c73d3b361242013fa848b267021c6d5af3b
+  languageName: node
+  linkType: hard
+
+"resolve-from@npm:^2.0.0":
+  version: 2.0.0
+  resolution: "resolve-from@npm:2.0.0"
+  checksum: c38664d001043dd2255b12a60a41c866585bb720c04774a006a4d802b0e5e49c117d24af3a21d1029ff9364e249d7b235b73f2ad91c0cbcfa5f523fc054aa07a
+  languageName: node
+  linkType: hard
+
 "rimraf@npm:^2.6.3":
   version: 2.7.1
   resolution: "rimraf@npm:2.7.1"
@@ -1767,6 +1900,15 @@ fsevents@~2.1.2:
   version: 2.1.2
   resolution: "safer-buffer@npm:2.1.2"
   checksum: cfd3f4d7dc37db071c3b36c8e4315e3912e70f1a44c87936cafb6b3b15af362893ca02da703398fbbc299c1599fa49fca9ddda41ffd347adda417f988848dcf2
+  languageName: node
+  linkType: hard
+
+"saslprep@npm:^1.0.0":
+  version: 1.0.3
+  resolution: "saslprep@npm:1.0.3"
+  dependencies:
+    sparse-bitfield: ^3.0.3
+  checksum: f727f557d2d6e04d1a2ce1ca0b1c3dae2617d027aa079ddf507a8a0a753e05e49b7e73bb1514d3babf271dba25a29bfb50e1cec9176cdee2327a2de52996dde8
   languageName: node
   linkType: hard
 
@@ -1851,10 +1993,33 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"sift@npm:7.0.1":
+  version: 7.0.1
+  resolution: "sift@npm:7.0.1"
+  checksum: 57fc0684da6b25814abf88850792d293315a3abd0e78d8e61d5e3ea5059532ad3add83418400c68eaea6b221367104bd1a1919cccd2c2ffb1fd9691cba2087cd
+  languageName: node
+  linkType: hard
+
 "signal-exit@npm:^3.0.0, signal-exit@npm:^3.0.2":
   version: 3.0.2
   resolution: "signal-exit@npm:3.0.2"
   checksum: b3d9a5567188a680bdb67fb996c2ffe49dfb1db5295d4e55e34ce77ca8e7a9f3f81672b71279fed5dcb2057afd133a5a7d5bd4de4652a8714c668460900f183c
+  languageName: node
+  linkType: hard
+
+"sliced@npm:1.0.1":
+  version: 1.0.1
+  resolution: "sliced@npm:1.0.1"
+  checksum: 58a175b6054ab93be3de1ac8599506818e964b57d3cd07a4ed5d9040a0aa833594f0f53c37293269b6811f42a7e8088e3cd62066439afd5159bd4a641e026fa7
+  languageName: node
+  linkType: hard
+
+"sparse-bitfield@npm:^3.0.3":
+  version: 3.0.3
+  resolution: "sparse-bitfield@npm:3.0.3"
+  dependencies:
+    memory-pager: ^1.0.2
+  checksum: 4c24e038b1d0ac03d66e52aa39df84d28adfc2702a0f1a39c958c31e0a6ae022037b1af7bc43f42904b70d090918d5f7beeda738bdd4fbb4ee039d5ba4ebbf5d
   languageName: node
   linkType: hard
 
