@@ -2,7 +2,9 @@ const express = require("express");
 const dotenv = require("dotenv");
 
 // Load ENV vars
-dotenv.config({ path: "./config/config.env" });
+dotenv.config({
+  path: "./config/config.env"
+});
 
 // Create express app
 const app = express();
