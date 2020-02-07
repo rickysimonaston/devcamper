@@ -143,6 +143,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"basic-auth@npm:~2.0.0":
+  version: 2.0.1
+  resolution: "basic-auth@npm:2.0.1"
+  dependencies:
+    safe-buffer: 5.1.2
+  checksum: ce3c36dec1da7c5bd8d2652fdc9534c17afaf3d2f8c789d2073cbc9134ca1eca758604c432bfcab085cc5e5fdb2e24dce28f7f547934eef09f1002e6189b6260
+  languageName: node
+  linkType: hard
+
 "bcrypt-pbkdf@npm:^1.0.0":
   version: 1.0.2
   resolution: "bcrypt-pbkdf@npm:1.0.2"
@@ -482,6 +491,7 @@ __metadata:
   dependencies:
     dotenv: ^8.2.0
     express: ^4.17.1
+    morgan: ^1.9.1
     nodemon: ^2.0.2
   languageName: unknown
   linkType: soft
@@ -1273,6 +1283,19 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"morgan@npm:^1.9.1":
+  version: 1.9.1
+  resolution: "morgan@npm:1.9.1"
+  dependencies:
+    basic-auth: ~2.0.0
+    debug: 2.6.9
+    depd: ~1.1.2
+    on-finished: ~2.3.0
+    on-headers: ~1.0.1
+  checksum: c22c599217a3370b711e072f928454371780fa8dbe0ca1911c7b19083607245e6b8a8a86a95425a75941f4a1908a34d5c0eb166bbdac63445c4ee654adbd98e1
+  languageName: node
+  linkType: hard
+
 "ms@npm:2.0.0":
   version: 2.0.0
   resolution: "ms@npm:2.0.0"
@@ -1420,6 +1443,13 @@ fsevents@~2.1.2:
   dependencies:
     ee-first: 1.1.1
   checksum: a22fb45dade5cdc10ab0d0064a035dcb42f5cb6bb302da58c4a9db4e6b8a5042209da8644c9e020a81872be5259b5c0be3385979b3d5802591454181c64143eb
+  languageName: node
+  linkType: hard
+
+"on-headers@npm:~1.0.1":
+  version: 1.0.2
+  resolution: "on-headers@npm:1.0.2"
+  checksum: 06aa555375a4e33b4c8b42af5a5538a6974dcb8fd8af6f4e084a039a026a7d1b2a8e97779fb7c46faafcc544cf17f1aadaed79829db9962ddbbaaf5e8b90100e
   languageName: node
   linkType: hard
 
