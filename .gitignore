@@ -1,2 +1,5 @@
 node_modules/
 config/config.env
+.yarn/
+.pnp.js
+yarn.lock
