@@ -6,6 +6,7 @@ const colors = require('colors');
 
 // Own App requirements
 const connectDB = require('./config/db');
+const errorHandler = require('./middleware/error')
 
 // Load ENV vars
 dotenv.config({
@@ -31,6 +32,9 @@ if (process.env.NODE_ENV === 'development') {
 
 // Mount routers
 app.use('/api/v1/bootcamps', bootcamps);
+
+// Middleware
+app.use(errorHandler);
 
 // Create express server
 const PORT = process.env.PORT || 5000;

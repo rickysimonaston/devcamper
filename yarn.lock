@@ -175,6 +175,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bluebird@npm:^3.5.0, bluebird@npm:^3.5.2":
+  version: 3.7.2
+  resolution: "bluebird@npm:3.7.2"
+  checksum: 4e5f205679664a37ef57a4001c0a3efc1157caac424fd16464f58ef3bea311b4dd1de6fb329275c4d04aec7ec94fad37c3e04f56a52a4ed4a6949d61057461cb
+  languageName: node
+  linkType: hard
+
 "body-parser@npm:1.19.0":
   version: 1.19.0
   resolution: "body-parser@npm:1.19.0"
@@ -524,7 +531,9 @@ __metadata:
     express: ^4.17.1
     mongoose: ^5.8.11
     morgan: ^1.9.1
+    node-geocoder: ^3.25.0
     nodemon: ^2.0.2
+    slugify: ^1.3.6
   languageName: unknown
   linkType: soft
 
@@ -1197,6 +1206,13 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"lodash@npm:^4.17.15":
+  version: 4.17.15
+  resolution: "lodash@npm:4.17.15"
+  checksum: b018ec8d4c95f14a4b57005a247eca1bc25639322939471a1958d3bc721b4f18e90edb6ea564854593a8bc1f94956a0352cf0cd372991b98c42d61c0cd11e5a3
+  languageName: node
+  linkType: hard
+
 "lowercase-keys@npm:^1.0.0":
   version: 1.0.1
   resolution: "lowercase-keys@npm:1.0.1"
@@ -1430,6 +1446,17 @@ fsevents@~2.1.2:
   version: 0.6.2
   resolution: "negotiator@npm:0.6.2"
   checksum: ba007b54f72a0718de14202b58203641805347db8c805d6edc69d3f369b02dd93f372aa26c90f28de21475e874e372f5de0ef581ab85ed0700a4d43185673832
+  languageName: node
+  linkType: hard
+
+"node-geocoder@npm:^3.25.0":
+  version: 3.25.0
+  resolution: "node-geocoder@npm:3.25.0"
+  dependencies:
+    bluebird: ^3.5.2
+    request: ^2.88.0
+    request-promise: ^4.2.2
+  checksum: d182969489c170cc3072aa74b95a1f1eb50a4c5d9d2faba543f07f4a361aa8a9aa8495557eeea17b21306e27c314ad0c9e9b600461a27ed0545b687c9a7a069d
   languageName: node
   linkType: hard
 
@@ -1701,7 +1728,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"psl@npm:^1.1.24":
+"psl@npm:^1.1.24, psl@npm:^1.1.28":
   version: 1.7.0
   resolution: "psl@npm:1.7.0"
   checksum: 1982fcd4cdc3a0417eafb0fd97c778b1156807a4891d25a4e6677b6d262d2d175150d7e557a2a3a263bc1e13d4a118f9bbe93f116fc22f479810199629ad13e3
@@ -1722,7 +1749,7 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
-"punycode@npm:^2.1.0":
+"punycode@npm:^2.1.0, punycode@npm:^2.1.1":
   version: 2.1.1
   resolution: "punycode@npm:2.1.1"
   checksum: 497a65093f48fc94a91a2166cf4365d162ab07977adc8dc23dfb6c109c3d0dc004ea3623813a64e62992ad85d14b6a13a489055acd5c4763f56cae0733d71095
@@ -1823,6 +1850,31 @@ fsevents@~2.1.2:
   dependencies:
     rc: ^1.0.1
   checksum: 00e318356323425698fed7541a21ae3a0721b61a36e699181da6ec04840838339dd9eb8089e9b4091ab4e9481017d1a7570283e40cb416664f0a6f7f71211dad
+  languageName: node
+  linkType: hard
+
+"request-promise-core@npm:1.1.3":
+  version: 1.1.3
+  resolution: "request-promise-core@npm:1.1.3"
+  dependencies:
+    lodash: ^4.17.15
+  peerDependencies:
+    request: ^2.34
+  checksum: 193fa2901032ef4ea8159e762f8fc253359cc3bd1b621ec9a101a2bffa6a97cdd07906a397718ee4accc6d2c82ec254bad4ea33ebcb60fb702cbaf682231b42b
+  languageName: node
+  linkType: hard
+
+"request-promise@npm:^4.2.2":
+  version: 4.2.5
+  resolution: "request-promise@npm:4.2.5"
+  dependencies:
+    bluebird: ^3.5.0
+    request-promise-core: 1.1.3
+    stealthy-require: ^1.1.1
+    tough-cookie: ^2.3.3
+  peerDependencies:
+    request: ^2.34
+  checksum: 4cd22995fe7bedff75ad16232bb66028c8ff269eb4235cc403595a846a9d0286ddf2156ab184ae40b8f647f9dc88843ee3b3c280682077b31f1874910254e64b
   languageName: node
   linkType: hard
 
@@ -2014,6 +2066,13 @@ fsevents@~2.1.2:
   languageName: node
   linkType: hard
 
+"slugify@npm:^1.3.6":
+  version: 1.3.6
+  resolution: "slugify@npm:1.3.6"
+  checksum: 8dd5b8d6949da373f4f62ab5359eda231f61c80b16a98fdfd211b7305a652be8e5856eb7df4621aff0a51c2adf36a8dc0c21666fd9b75486dc910d4cdf7c4673
+  languageName: node
+  linkType: hard
+
 "sparse-bitfield@npm:^3.0.3":
   version: 3.0.3
   resolution: "sparse-bitfield@npm:3.0.3"
@@ -2048,6 +2107,13 @@ fsevents@~2.1.2:
   version: 1.5.0
   resolution: "statuses@npm:1.5.0"
   checksum: f9d54c70e9abf0ea577d03e93c4dc13dd6d458740fd913ea6c53378f82638d518a69dee44d480606d4e443faacc19aac628ffabf066f6c88107eaa8b55e3854d
+  languageName: node
+  linkType: hard
+
+"stealthy-require@npm:^1.1.1":
+  version: 1.1.1
+  resolution: "stealthy-require@npm:1.1.1"
+  checksum: ac27495d1a1d6018109606146a83203471ef1ebadac2c4cd3ea6fd5468596f0a0ba2d5cfcb2d5ffb3a77f8e80379a6ecfd496fbf5a224e9ab88fd675eecf4941
   languageName: node
   linkType: hard
 
@@ -2177,6 +2243,16 @@ fsevents@~2.1.2:
   bin:
     nodetouch: ./bin/nodetouch.js
   checksum: a38f6185dae9ccd073b6ca43d55a2da02ad90f5148ab7f806aefffd2b65b7f4616b90b66903f491565259547547b7a927e87b75242817e7f7040dabe7a141b7f
+  languageName: node
+  linkType: hard
+
+"tough-cookie@npm:^2.3.3":
+  version: 2.5.0
+  resolution: "tough-cookie@npm:2.5.0"
+  dependencies:
+    psl: ^1.1.28
+    punycode: ^2.1.1
+  checksum: a0e7092d1818d4ab1ba1caddbabe7037dbaf180ef67d811c940bb550bc3b988472e2b2e3368f9ede80d12a369044f05afe03053ecb0f54df7870c4744cd6b065
   languageName: node
   linkType: hard
 
