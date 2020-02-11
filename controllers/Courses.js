@@ -8,28 +8,20 @@ const Bootcamp = require('../models/Bootcamp');
 // @route   GET /api/v1/bootcamps/:bootcampId/courses
 // @access  Public
 exports.getCourses = asyncHandler(async (req, res, next) => {
-  // Init query variable
-  let query;
   // Check to see weather there is an Bootcamp ID in the params then get that specific course
   if (req.params.bootcampId) {
-    query = Course.find({
+    const courses = await Course.find({
       bootcamp: req.params.bootcampId,
     });
-    // query to return all courses
+    return res.status(200).json({
+      success: true,
+      count: courses.length,
+      data: courses
+    })
+    //return all courses
   } else {
-    query = Course.find().populate({
-      path: 'bootcamp',
-      select: 'name description',
-    });
+    res.status(200).json(res.advancedResults);
   }
-  // Call the query to the DB
-  const courses = await query;
-  // Query response data
-  res.status(200).json({
-    success: true,
-    count: courses.length,
-    data: courses,
-  });
 });
 
 // @desc    Get a single course

@@ -1,3 +1,4 @@
+const path = require('path');
 const ErrorResponse = require('../utils/errorResponse');
 const asyncHandler = require('../middleware/async');
 const geocoder = require('../utils/geocoder');
@@ -6,64 +7,8 @@ const Bootcamp = require('../models/Bootcamp');
 // @route   GET /api/v1/bootcamps
 // @access  Public
 exports.getBootcamps = asyncHandler(async (req, res, next) => {
-    let query;
-    // Copy the request object query
-    const reqQuery = {
-        ...req.query,
-    };
-    // Array fields excluded
-    const removeFields = ['select', 'sort', 'limit', 'page'];
-    // Loop over Remove fields and delete them from request query
-    removeFields.forEach(param => delete reqQuery[param]);
-    // Creates query string using the request data
-    let queryStr = JSON.stringify(reqQuery);
-    // Modifying the query to include the $gt $gte to match mongoose
-    queryStr = queryStr.replace(/\b(gt|gte|lt|lte|in)\b/g, match => `$${match}`);
-    // Query to the Database
-    query = Bootcamp.find(JSON.parse(queryStr)).populate('courses');
-    // Select Fields
-    if (req.query.select) {
-        const fields = req.query.select.split(',').join('');
-        query = query.select(fields);
-    }
-    // Sort field
-    if (req.query.sort) {
-        const sortBy = req.query.sort.split(',').join('');
-        query = query.sort(sortBy);
-    } else {
-        query = query.sort('-createdAt');
-    }
-    // Pagination
-    const page = parseInt(req.query.page, 10) || 1;
-    const limit = parseInt(req.query.limit, 10) || 25;
-    const startIndex = (page - 1) * limit;
-    const endIndex = page * limit;
-    const total = await Bootcamp.countDocuments();
 
-    // Create query for pagination
-    query = query.skip(startIndex).limit(limit);
-    // Data back from the database
-    const bootcamps = await query;
-    // Pagination Results
-    const pagination = {};
-    if (endIndex < total) {
-        pagination.next = {
-            page: page + 1,
-            limit,
-        };
-    }
-    if (startIndex > 0) {
-        pagination.prev = {
-            page: page - 1,
-            limit,
-        };
-    }
-    res.status(200).json({
-        success: true,
-        count: bootcamps.length,
-        pagination,
-        data: bootcamps,
-    });
+    res.status(200).json(res.advancedResults);
 });
 
 // @desc    Get single bootcamp
@@ -166,4 +111,47 @@ exports.getBootcampsInRadius = asyncHandler(async (req, res, next) => {
         count: bootcamps.length,
         data: bootcamps,
     });
+});
+// @desc    Upload photo for bootcamp
+// @route   DELETE /api/v1/bootcamps/:id/photo
+// @access  Private
+exports.bootcampPhotoUpload = asyncHandler(async (req, res, next) => {
+    const bootcamp = await Bootcamp.findById(req.params.id);
+    // Checks there is a bootcamp
+    if (!bootcamp) {
+        return next(new ErrorResponse(`Bootcamp not found id of ${req.params.id}`, 404));
+    }
+    // Check to make sure there is a file
+    if (!req.files) {
+        return next(new ErrorResponse(`Please upload  file`, 400));
+    }
+    // File object variable
+    const file = req.files.file
+    // Make sure the file is a photo
+    if (!file.mimetype.startsWith('image')) {
+        return next(new ErrorResponse(`Please upload an image file`, 400));
+    }
+    // Check file size
+    if (file.size > process.env.MAX_FILE_UPLOAD) {
+        return next(new ErrorResponse(`Please upload an image less than ${process.env.MAX_FILE_UPLOAD}`, 400))
+    }
+    // Create custom file name
+    file.name = `photo_${bootcamp._id}${path.parse(file.name).ext}`
+    // Move file
+    file.mv(`${process.env.FILE_UPLOAD_PATH}/${file.name}`, async err => {
+        // Check error
+        if (err) {
+            console.error(err);
+            return next(new ErrorResponse(`Problem with file upload`, 500))
+        }
+        await Bootcamp.findByIdAndUpdate(req.params.id, {
+            photo: file.name
+        });
+        //Response to user
+        res.status(200).json({
+            success: true,
+            data: file.name,
+        });
+    })
+
 });
