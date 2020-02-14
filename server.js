@@ -9,11 +9,11 @@ const cookieParser = require('cookie-parser');
 
 // Own App requirements
 const connectDB = require('./config/db');
-const errorHandler = require('./middleware/error')
+const errorHandler = require('./middleware/error');
 
 // Load ENV vars
 dotenv.config({
-  path: './config/config.env',
+  path: './config/config.env'
 });
 
 // Connect to database
@@ -23,6 +23,7 @@ connectDB();
 const bootcamps = require('./routes/bootcamps');
 const courses = require('./routes/courses');
 const auth = require('./routes/auth');
+const users = require('./routes/users');
 
 // Create express app
 const app = express();
@@ -48,6 +49,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api/v1/bootcamps', bootcamps);
 app.use('/api/v1/courses', courses);
 app.use('/api/v1/auth', auth);
+app.use('/api/v1/users', users);
 
 // Middleware
 app.use(errorHandler);
@@ -58,8 +60,8 @@ const server = app.listen(
   PORT,
   console.log(
     `Server running in ${process.env.NODE_ENV} mode on port ${PORT}!`.yellow
-    .bold,
-  ),
+      .bold
+  )
 );
 
 // Handle Unhandled promise rejections
